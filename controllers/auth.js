@@ -28,7 +28,6 @@ module.exports.login = async (req, res, next) => {
             })
         }
 
-        // helllo 
         else {
             return res.status(200).json({
                 error: false,
