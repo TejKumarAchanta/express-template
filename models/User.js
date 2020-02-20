@@ -18,7 +18,6 @@ var userSchema = new mongoose.Schema({
     mobile: {
         type: String,
         required: true,
-        unique: true,
     },
     password: {
         type: String,
@@ -30,6 +29,9 @@ var userSchema = new mongoose.Schema({
         enum: ["USER", "ADMIN"],
         default: "USER",
         required: true
+    },
+    addedBy: {
+        type: String,
     }
 });
 

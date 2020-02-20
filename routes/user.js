@@ -9,6 +9,8 @@ const { verifyToken, authorize } = require('../middlewares/auth');
 
 router.get('/getUsers', verifyToken, authorize('ADMIN'), userController.getUsers)
 
+router.post('/addUser', verifyToken, authorize('ADMIN'), userController.addUser)
+
 
 
 
