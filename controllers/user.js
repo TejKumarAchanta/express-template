@@ -1,8 +1,9 @@
 const User = require('../models/User');
 const utils = require('../utils/utils');
+const { asyncHandler } = require('../middlewares/asyncHandler');
 
 
-module.exports.getUsers = async (req, res, next) => {
+module.exports.getUsers = asyncHandler(async (req, res, next) => {
 
     let users = await User.find({}, { name: 1, email: 1, mobile: 1 });
 
@@ -12,7 +13,7 @@ module.exports.getUsers = async (req, res, next) => {
         count: users.length
     })
 
-}
+})
 
 
 

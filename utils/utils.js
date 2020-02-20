@@ -15,3 +15,13 @@ module.exports.checkPassword = function (password, hashed) {
         res(bcrypt.compare(password, hashed))
     })
 }
+
+class ErrorResponse extends Error {
+    constructor(message, statusCode) {
+        super(message);
+        this.statusCode = statusCode
+    }
+}
+
+
+module.exports.ErrorResponse = ErrorResponse

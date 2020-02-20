@@ -38,6 +38,8 @@ app.use(express.json());
 
 app.use('/api/v1/auth', authRoutes)
 app.use('/api/v1/user', userRoutes)
+
+app.use(errorHandler);
 app.get('/', (req, res) => res.send('Hello World!'))
 
 
